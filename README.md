@@ -1,2 +1,3 @@
-# swarm-inventory
-Swarm Microservice for Inventory - RHOAR course
+# Wildfly Swarm - Inventory
+Demo application for Wildfly Swarm.
+
