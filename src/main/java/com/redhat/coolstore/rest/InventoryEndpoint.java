@@ -11,7 +11,7 @@ import com.redhat.coolstore.model.Inventory;
 import com.redhat.coolstore.service.InventoryService;
 
 @Path("/inventory")
-public class InventoryEndpoint  {
+public class InventoryEndpoint {
 
     @Inject
     private InventoryService inventoryService;
@@ -22,5 +22,4 @@ public class InventoryEndpoint  {
     public Inventory getAvailability(@PathParam("itemId") String itemId) {
         return inventoryService.getInventory(itemId);
     }
-
 }
