@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Route
 metadata:
-  name: swarm-inventory-lab2
+  name: inventory
 spec:
   port:
     targetPort: 8080
   to:
     kind: Service
-    name: swarm-inventory-lab2
+    name: inventory

@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: DeploymentConfig
 metadata:
-  name: swarm-inventory-database-lab2
+  name: inventory-database
   labels:
-    app: swarm-inventory-database-lab2
+    app: inventory-database
   annotations:
     openshift.io/generated-by: OpenShiftNewApp
 spec:
@@ -15,7 +15,7 @@ spec:
       imageChangeParams:
         automatic: true
         containerNames:
-          - swarm-inventory-database-lab2
+          - inventory-database
         from:
           kind: ImageStreamTag
           namespace: openshift
@@ -23,19 +23,19 @@ spec:
   replicas: 1
   test: false
   selector:
-    app: swarm-inventory-database-lab2
-    deploymentconfig: swarm-inventory-database-lab2
+    app: inventory-database
+    deploymentconfig: inventory-database
   template:
     metadata:
       labels:
-        app: swarm-inventory-database-lab2
-        deploymentconfig: swarm-inventory-database-lab2
+        app: inventory-database
+        deploymentconfig: inventory-database
     spec:
       volumes:
-        - name: swarm-inventory-database-lab2-volume-1
+        - name: inventory-database-volume-1
           emptyDir: {}
       containers:
-        - name: swarm-inventory-database-lab2
+        - name: inventory-database
           image: postgresql
           imagePullPolicy: IfNotPresent
           ports:
